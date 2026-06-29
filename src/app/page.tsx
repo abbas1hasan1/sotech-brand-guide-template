@@ -29,6 +29,7 @@ export default function Page() {
           <p className="tag" data-reveal><Tag s={b.tagline} /></p>
           <div className="btn-row" data-reveal>
             <button className="btn" id="copyVars">⧉ Copy CSS variables</button>
+            <button className="btn" id="printPdf">↓ Download PDF</button>
             <a className="btn" href={b.logo.mark} download>↓ Download logo</a>
           </div>
           <div className="meta" data-reveal>

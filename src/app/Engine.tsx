@@ -80,12 +80,16 @@ export default function Engine({ cssVars }: { cssVars: string }) {
       flash("CSS variables copied");
     };
     copyBtn?.addEventListener("click", onCopyVars);
+    const printBtn = document.getElementById("printPdf");
+    const onPrint = () => window.print();
+    printBtn?.addEventListener("click", onPrint);
 
     return () => {
       window.removeEventListener("scroll", onScroll);
       io.disconnect();
       swatchHandlers.forEach(([s, h]) => s.removeEventListener("click", h));
       copyBtn?.removeEventListener("click", onCopyVars);
+      printBtn?.removeEventListener("click", onPrint);
     };
   }, [cssVars]);
 
